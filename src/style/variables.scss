@@ -1,0 +1,28 @@
+$green: #4bcfa0;
+$green2: #4bcfa0b8;
+$red: #e43f3f;
+$white: #ffffff;
+$black: #000000;
+$grey: #f2f2f2;
+$border: rgba(0, 0, 0, 0.1);
+$border2: rgba(0, 0, 0, 0.2);
+$grey2: rgba(0, 0, 0, 0.5);
+$bg-modal: rgba(0, 0, 0, 0.8);
+
+$box-shadow: 24px 24px 24px rgba(75, 207, 160, 0.08);
+$box-shadow2: 24px 24px 24px rgba(75, 207, 160, 0.1);
+$box-shadow3: 0px 8px 15px rgba(0, 0, 0, .3);
+
+$font-size: 60px, 50px, 40px, 30px, 16px, 14px, 12px;
+
+$btn-map: (
+    card-item 16px 16px 24px $white $green uppercase $border,
+    cards 48px 24px 28px $green $white none transparent,
+    form 117px 16px 24px $green $white uppercase transparent,
+);
+
+$btn-map-hover: (
+    card-item transparent,
+    cards $border $box-shadow2,
+    form $border $box-shadow2,
+);

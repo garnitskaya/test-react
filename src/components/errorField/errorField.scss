@@ -1,0 +1,11 @@
+@import '../../style/';
+
+.error {
+    &__field {
+        display: block;
+        margin: 3px 0 0 5px;
+        @include fz(nth($font-size, 7));
+        color: $red;
+        letter-spacing: -0.02em;
+    }
+}

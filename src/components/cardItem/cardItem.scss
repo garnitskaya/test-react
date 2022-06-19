@@ -1,0 +1,57 @@
+@import "../../style";
+
+.card-item {
+    display: grid;
+    grid-template: repeat(2, minmax(80px, 1fr)) / 1fr;
+    row-gap: 40px;
+    padding: 32px;
+    background: $white;
+    border-radius: 24px;
+    transition: .4s all;
+
+    &:hover {
+        box-shadow: $box-shadow;
+    }
+
+    &__category {
+        @extend %extend-category;
+    }
+
+    &__name {
+        @extend %extend-name;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__block-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price {
+        @extend %extend-price;
+    }
+}
+
+@include mobil {
+    .card-item {
+        padding: 25px;
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 15px;
+
+        &__category {
+            @include fz(nth($font-size, 6));
+        }
+
+        &__name {
+            @include fz(nth($font-size, 4));
+        }
+
+        &__price {
+            @include fz(nth($font-size, 2));
+        }
+    }
+}

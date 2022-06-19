@@ -1,0 +1,57 @@
+@import "../style/variables.scss";
+
+body {
+    font-family: "Roboto", sans-serif;
+    background: $grey;
+    color: $black;
+    font-weight: 400;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 100px 15px;
+    max-width: 1165px;
+}
+
+.title {
+    text-align: center;
+    @include fz(nth($font-size, 2));
+}
+
+.arrow-hover {
+    opacity: 0;
+    position: relative;
+}
+
+.arrow-hover span {
+    position: absolute;
+    background: url('../resource/icon/arrow-right.svg')no-repeat;
+    top: -2px;
+    right: -25px;
+    width: 22px;
+    height: 22px;
+    animation: arrow-hover 1s linear infinite;
+}
+
+@include tablet {
+    .container {
+        padding: 50px 15px;
+    }
+}
+
+@include mobil {
+    .container {
+        padding: 30px 15px;
+    }
+
+    .title {
+        @include fz(nth($font-size, 4));
+    }
+}

@@ -1,0 +1,52 @@
+@import "../../style";
+
+@each $name,
+$padding,
+$font-size,
+$line-height,
+$bg-color,
+$color,
+$transform,
+$border in $btn-map {
+    .#{$name}__btn {
+        @extend %extend-btn;
+        padding-left: $padding;
+        padding-right: $padding;
+        font-size: $font-size;
+        line-height: $line-height;
+        background-color: $bg-color;
+        color: $color;
+        text-transform: $transform;
+        border: 1px solid $border;
+
+        &:disabled {
+            background: $green2;
+        }
+
+        &:disabled:hover {
+            background: $green2;
+            cursor: not-allowed;
+
+            .arrow-hover {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@each $name,
+$border,
+$box-shadow in $btn-map-hover {
+    .#{$name}__btn:hover {
+        background-color: $green;
+        color: $white;
+        border-color: $border;
+        box-shadow: $box-shadow;
+
+        @if ($name =='form') {
+            .arrow-hover {
+                opacity: 1;
+            }
+        }
+    }
+}

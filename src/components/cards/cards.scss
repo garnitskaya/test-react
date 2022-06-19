@@ -1,0 +1,23 @@
+@import '../../style/';
+
+.cards {
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+        justify-content: center;
+        gap: 40px;
+    }
+
+    &__btn {
+        margin: 70px auto 0;
+    }
+}
+
+@include mobil {
+    .cards {
+        &__wrap {
+            grid-template-columns: repeat(auto-fit, auto);
+            gap: 20px;
+        }
+    }
+}

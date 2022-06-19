@@ -1,0 +1,19 @@
+@mixin fz($fz) {
+    @if($fz >16) {
+        font-size: $fz;
+        line-height: $fz * 1.2;
+    }
+
+    @else {
+        font-size: $fz;
+        line-height: $fz * 1.5;
+    }
+}
+
+@mixin close($bg, $deg, $top: 17px, $right: 12px) {
+    @extend %extend-close;
+    top: $top;
+    right: $right;
+    background: $bg;
+    transform: rotate($deg);
+}

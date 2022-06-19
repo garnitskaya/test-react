@@ -1,0 +1,96 @@
+@import "../../style";
+
+.modal {
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $bg-modal;
+    transition: 0.4s all;
+    z-index: 10;
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__content {
+        padding: 55px 30px 65px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 384px;
+        height: fit-content;
+        background: $white;
+        border-radius: 24px;
+        transform: scale(.5);
+        transition: 0.4s all;
+
+        &.active {
+            transform: scale(1);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+        background: $grey;
+        border-radius: 24px;
+        cursor: pointer;
+        transition: .4s all;
+
+        &:hover {
+            box-shadow: $box-shadow3;
+        }
+
+        &:after {
+            @include close($black, 45deg);
+        }
+
+        &:before {
+            @include close($black, -45deg);
+        }
+    }
+
+    &__category {
+        @extend %extend-category;
+    }
+
+    &__name {
+        @extend %extend-name;
+
+        &:first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &__price {
+        margin-top: 16px;
+        @extend %extend-price;
+    }
+
+}
+
+@include mobil {
+    .modal {
+
+        &__content {
+            padding: 40px 25px;
+            max-width: calc(100% - 36px);
+        }
+
+        &__price {
+            margin-top: 5px;
+        }
+    }
+}
